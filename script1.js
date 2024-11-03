@@ -41,6 +41,9 @@ function updateTutorial() {
     if (currentImageIndex === 2) {
         tutorialImage.style.width = '800px';  // 원하는 크기로 줄이기
         tutorialImage.style.height = 'auto';  // 비율 유지
+    } else {
+        tutorialImage.style.width = '1280px'; // 기본 크기로 재설정
+        tutorialImage.style.height = 'auto';  // 비율 유지
     }
 }
 
@@ -60,4 +63,33 @@ function prevTutorial() {
         currentImageIndex = tutorialData.length - 1;  // 첫 이미지에서 마지막 이미지로 돌아가기
     }
     updateTutorial();
+}
+
+// 이벤트 기록 함수
+function logEvent(eventType) {
+    const userId = localStorage.getItem('userId'); // 로그인한 사용자 ID를 로컬 스토리지에서 가져옵니다.
+
+    const data = {
+        userId: userId,
+        eventType: eventType,
+        comment: `${userId} ${eventType} 버튼 누름` // 코멘트 형식
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbyCrewjcnY3AbPE5vhv5_flwxlQMucC49Nu9GRxH1yQWQS62BIAQJ09JJmQULVIJ9-Bfw/exec", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("로그 기록 성공");
+        } else {
+            console.error("로그 기록 실패");
+        }
+    })
+    .catch(error => {
+        console.error("네트워크 오류:", error);
+    });
 }
