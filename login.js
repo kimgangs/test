@@ -64,14 +64,13 @@ function sendLogData(eventId, userId, eventType, comment) {
     .catch(error => console.error("로그 전송 실패:", error));
 }
 
-// 로그인 성공 시 sendLogData 호출 예시
 function handleLogin(event) {
-    event.preventDefault();
+    event.preventDefault(); // 기본 폼 제출을 방지
 
-    const studentId = document.getElementById("studentId").value;
-    const studentName = document.getElementById("studentName").value;
+    const studentId = document.getElementById("studentId").value; // 학번 가져오기
+    const studentName = document.getElementById("studentName").value; // 이름 가져오기
 
-    if (validUsers[studentId] === studentName) {
+    if (validUsers[studentId] === studentName) { // 사용자 검사
         alert("으라차차 농산물시장에 오신걸 환영합니다!");
 
         // 로그인 성공 로그 전송
