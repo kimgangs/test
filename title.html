@@ -13,13 +13,12 @@
       <!-- 음소거 및 재생 이미지 버튼 -->
      <img id="musicIcon" src="mute.png" alt="음악 켜기/끄기" onclick="toggleMusic()" class="image-button" width="50" height="50">
 
-
     <div class="container">
         <ul class="menu">
-            <!-- 2.html 페이지로 이동하는 링크 -->
-            <li><a href="2.html"><button><img src="button1.png" alt="게임시작"></button></a></li>
-            <li><button><img src="button2.png" alt="튜토리얼" onclick="openTutorial()"></button></li>
-            <li><button><img src="button3.png" alt="제작자 정보" onclick="openCreatorInfo()"></button></li>
+            <!-- 게임 시작 버튼 클릭 시 로그 기록 -->
+            <li><a href="2.html"><button onclick="logButtonClick('게임시작버튼누름', '게임 시작')"><img src="button1.png" alt="게임시작"></button></a></li>
+            <li><button onclick="logButtonClick('튜토리얼버튼누름', '튜토리얼 시작')" id="tutorialButton"><img src="button2.png" alt="튜토리얼"></button></li>
+            <li><button onclick="logButtonClick('제작자정보버튼누름', '제작자 정보 보기')"><img src="button3.png" alt="제작자 정보"></button></li>
         </ul>
     </div>
 
