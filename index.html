@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-<link rel="stylesheet" href="loginstyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginstyle.css">
 </head>
 <body>
-<form action="title.html" method="post">
-    <table>
-    <tr>
-        <td><h2>으라차차 농산물 시장 로그인</h2></td>
-    </tr>
-    <tr>
-        <td><input type="text" placeholder="학번" name="학번"></td>
-    </tr>
-    <tr>
-        <td><input type="text" placeholder="이름" name="이름"></td>
-    </tr>
-    <tr>
-        <td><input type="submit" value="로그인" class="btn" onclick="alert('으라차차 농산물시장에 오신걸 환영합니다.')"></td> 
-    </tr>
-    </table>
-</form>
-<script>href = "login.js"</script>
+    <form onsubmit="return handleLogin(event);">
+        <table>
+            <tr>
+                <td><h2>으라차차 농산물 시장 로그인</h2></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="학번" name="학번" id="studentId" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="이름" name="이름" id="studentName" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="로그인" class="btn"></td> 
+            </tr>
+        </table>
+    </form>
+    <script src="login.js"></script>
 </body>
 </html>
