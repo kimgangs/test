@@ -67,7 +67,7 @@ function prevTutorial() {
 
 // 이벤트 기록 함수
 function logEvent(eventType) {
-    const userId = localStorage.getItem('userId'); // 로그인한 사용자 ID를 로컬 스토리지에서 가져옵니다.
+    const userId = localStorage.getItem('studentId'); // 로그인한 사용자 ID를 로컬 스토리지에서 가져옵니다.
 
     const data = {
         userId: userId,
