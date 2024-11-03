@@ -80,7 +80,8 @@ function logEvent(eventType) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        mode: "no-cors"
     })
     .then(response => {
         if (response.ok) {
