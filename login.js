@@ -78,6 +78,9 @@ function handleLogin(event) {
         const eventId = Date.now(); // 유일한 ID로 현재 시간 밀리초 사용
         sendLogData(eventId, studentId, "로그인", `로그인 성공: ${studentName}`);
 
+         // localStorage에 사용자 ID 저장
+        localStorage.setItem("studentId", studentId);
+
         // 페이지 리디렉션
         window.location.href = "title.html"; // 타이틀 화면으로 리디렉션
     } else {
